@@ -1,6 +1,6 @@
-package ru.kata.spring.boot_security.demo.service;
+package ru.kata.spring.bootstrap.service;
 
-import ru.kata.spring.boot_security.demo.models.User;
+import ru.kata.spring.bootstrap.models.User;
 
 import java.util.List;
 

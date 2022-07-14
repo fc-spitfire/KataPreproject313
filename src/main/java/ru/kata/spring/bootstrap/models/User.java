@@ -1,7 +1,8 @@
-package ru.kata.spring.boot_security.demo.models;
+package ru.kata.spring.bootstrap.models;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -116,6 +117,10 @@ public class User implements UserDetails {
 
     public void setRoles(List<Role> roles) {
         this.roles = roles;
+    }
+
+    public boolean hasRole(Role role) {
+        return roles.contains(role);
     }
 
     @Override

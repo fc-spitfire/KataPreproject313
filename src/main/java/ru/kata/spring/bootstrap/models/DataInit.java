@@ -1,11 +1,9 @@
-package ru.kata.spring.boot_security.demo.util;
+package ru.kata.spring.bootstrap.models;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import ru.kata.spring.boot_security.demo.models.Role;
-import ru.kata.spring.boot_security.demo.models.User;
-import ru.kata.spring.boot_security.demo.service.RoleService;
-import ru.kata.spring.boot_security.demo.service.UserService;
+import ru.kata.spring.bootstrap.service.RoleService;
+import ru.kata.spring.bootstrap.service.UserService;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
@@ -34,11 +32,11 @@ public class DataInit {
         List<Role> rolesAdmin = new ArrayList<>(List.of(roleAdmin, roleUser));
         List<Role> rolesUser = new ArrayList<>(List.of(roleUser));
 
-        userService.saveUser(new User("John", "Doe", 23, "New York", "Admin", "12345", rolesAdmin));
-        userService.saveUser(new User("Jane", "Doe", 28, "New Jersey", "User", "12345", rolesUser));
-        userService.saveUser(new User("Jake", "Doe", 21, "Austin", "User1", "12345", rolesUser));
-        userService.saveUser(new User("Jim", "Doe", 22, "New Orleans", "User2", "12345", rolesUser));
-        userService.saveUser(new User("Joe", "Doe", 39, "Raleigh", "User3", "12345", rolesUser));
-        userService.saveUser(new User("Jim", "Doe", 19, "Oklahoma City", "Guest", "12345", rolesUser));
+        userService.saveUser(new User("John", "Doe", 23, "New York", "admin@mail.ru", "12345", rolesAdmin));
+        userService.saveUser(new User("Jane", "Doe", 28, "New Jersey", "user@mail.ru", "12345", rolesUser));
+        userService.saveUser(new User("Jake", "Doe", 21, "Austin", "user1@mail.ru", "12345", rolesUser));
+        userService.saveUser(new User("Jim", "Doe", 22, "New Orleans", "user2@mail.ru", "12345", rolesUser));
+        userService.saveUser(new User("Joe", "Doe", 39, "Raleigh", "user3@mail.ru", "12345", rolesUser));
+        userService.saveUser(new User("Jim", "Doe", 19, "Oklahoma City", "guest@mail.ru", "12345", rolesUser));
     }
 }

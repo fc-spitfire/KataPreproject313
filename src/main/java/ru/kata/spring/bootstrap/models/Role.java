@@ -1,10 +1,9 @@
-package ru.kata.spring.boot_security.demo.models;
+package ru.kata.spring.bootstrap.models;
 
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
 import java.util.Objects;
-import java.util.Set;
 
 @Entity
 @Table(name = "roles")
@@ -28,6 +27,11 @@ public class Role implements GrantedAuthority {
 
     public Role(String name) {
         this.name = name;
+    }
+
+    public String getViewName() {
+        String[] s = name.split("_");
+        return s[1];
     }
 
     @Override
